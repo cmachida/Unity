@@ -431,7 +431,7 @@ class UnityTestRunnerGenerator
     if @options[:omit_begin_end]
       output.puts("  UnitySetTestFile(\"#{filename.gsub(/\\/, '\\\\\\')}\");")
     else
-      output.puts("  UNITY_BEGIN(\"#{filename.gsub(/\\/, '\\\\\\')}\");")
+      output.puts("  UNITY_BEGIN();")
     end
     tests.each do |test|
       if (!@options[:use_param_tests]) || test[:args].nil? || test[:args].empty?
